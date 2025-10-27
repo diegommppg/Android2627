@@ -98,7 +98,8 @@ public class ActivityProfile extends AppCompatActivity {
                 new ActivityResultContracts.StartActivityForResult(),
                 result -> {
                     if (result.getResultCode() == Activity.RESULT_OK && photoUri != null) {
-
+                        // Forzar recarga de la imagen para evitar caché
+                        imageViewFoto.setImageURI(null);
                         //Dato recibido correctamente
                         imageViewFoto.setImageURI(photoUri);
 
@@ -113,7 +114,7 @@ public class ActivityProfile extends AppCompatActivity {
 
 
         imageViewFoto.setOnClickListener(view -> {
-
+            photoUri = null;
             File photoFile = new File(getExternalFilesDir(null), "photo.jpg");
 
             // Usar FileProvider para crear la URI
