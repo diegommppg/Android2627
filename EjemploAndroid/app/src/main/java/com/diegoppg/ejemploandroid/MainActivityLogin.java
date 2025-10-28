@@ -50,6 +50,9 @@ public class MainActivityLogin extends AppCompatActivity {
                 user = nuevoNombre;
                 pass = nuevoPass;
             }
+            else if(result.getResultCode() == Activity.RESULT_CANCELED){
+                Toast.makeText(this, "Modificacion cancelada", Toast.LENGTH_SHORT).show();
+            }
         });
 
         buttonModify.setOnClickListener(v -> {

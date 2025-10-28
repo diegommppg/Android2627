@@ -26,8 +26,9 @@ public class ModificarCredenciales extends AppCompatActivity {
         });
 
         Button buttonGuardar = findViewById(R.id.buttonGuardar);
-        EditText editTextNombre = findViewById(R.id.editTextNombre);
-        EditText editTextPass = findViewById(R.id.editTextPass);
+        Button buttonCancelar = findViewById(R.id.buttonCancelar);
+        EditText editTextNombre = findViewById(R.id.editTextNuevoNombre);
+        EditText editTextPass = findViewById(R.id.editTextNuevaPass);
 
         buttonGuardar.setOnClickListener(v -> {
             Intent intentLogin = getIntent();
@@ -41,6 +42,13 @@ public class ModificarCredenciales extends AppCompatActivity {
             finish();
 
         });
+
+        buttonCancelar.setOnClickListener(v -> {
+            setResult(Activity.RESULT_CANCELED);
+            finish();
+        });
+
+
 
     }
 }
