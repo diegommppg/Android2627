@@ -84,4 +84,24 @@
             android:layout_weight="1"
             android:text="@string/button_modificar" />
     </LinearLayout>
+
+    <RadioGroup
+        android:layout_width="233dp"
+        android:layout_height="123dp"
+        tools:layout_editor_absoluteX="89dp"
+        tools:layout_editor_absoluteY="582dp">
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RadioButton" />
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RadioButton" />
+    </RadioGroup>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

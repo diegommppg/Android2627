@@ -2,9 +2,12 @@ package com.diegoppg.ejemploandroid;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -14,6 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.bumptech.glide.Glide;
 
 public class MainActivityLogin extends AppCompatActivity {
 
@@ -38,6 +43,30 @@ public class MainActivityLogin extends AppCompatActivity {
         EditText editTextPass = findViewById(R.id.editTextPass);
 
 
+        SharedPreferences sharedPref = getSharedPreferences("MiPreferencia", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+
+        editor.putString("nombreUsuario", "Juan");
+        editor.putBoolean("logueado", true);
+
+// Guarda los cambios
+        editor.apply(); // o editor.commit();
+
+
+
+        ImageView imageView = findViewById(R.id.imageViewTest);
+
+
+        Glide.with(this).load("https://goo.gl/gEgYUd").into(imageView);
+
+        /*Glide.with(this)
+                .load(url)
+                .placeholder(R.drawable.ic_placeholder) // imagen mientras carga
+                .error(R.drawable.ic_error) // imagen si ocurre un error
+                .apply(RequestOptions.circleCropTransform()) // transforma en imagen circular
+                .into(imageViewFoto);
+        */
+
 
         //Result Launcher cuando se modifica el usuario y contraseña desde otr actividad
         ActivityResultLauncher<Intent> activityResultModificar =
@@ -56,6 +85,14 @@ public class MainActivityLogin extends AppCompatActivity {
         });
 
         buttonModify.setOnClickListener(v -> {
+            SharedPreferences sharedPref2 = getSharedPreferences("MiPreferencia", MODE_PRIVATE);
+
+            String nombre = sharedPref2.getString("nombreUsuario", "Invitado");
+            boolean logueado = sharedPref2.getBoolean("logueado", false);
+
+            Log.d("SharedPref", "Usuario: " + nombre + ", Logueado: " + logueado);
+
+
             Intent intentMofificar = new Intent(this, ModificarCredenciales.class);
             activityResultModificar.launch(intentMofificar);
         });
