@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">EjemploApp</string>
+    <string name="nombre_usuario">"Nombre: "</string>
+    <string name="pass_usuario">"Contraseña: "</string>
+    <string name="button_iniciar">Iniciar Sesión</string>
+    <string name="button_modificar">Modificar Credenciales</string>
+    <string name="button_alarma">Poner Alarma</string>
+    <string name="textview_newname">"Nuevo nombre: "</string>
+    <string name="nuevo_nombre_hint">Nuevo nombre</string>
+    <string name="textview_newpass">"Nueva contraseña: "</string>
+    <string name="button_save">Guardar cambios</string>
+    <string name="button_cancelar">Cancelar</string>
+    <string name="nombre_alarma">"Nombre alarma: "</string>
+    <string name="hora_alarma">"Hora alarma: "</string>
+    <string name="minutos_alarma">Minutos alarma</string>
+    <string name="button_crear_alarma">Poner alarma</string>
+</resources>
