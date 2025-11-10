@@ -1,6 +1,8 @@
 package com.diegoppg.proyectohalloween;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -30,7 +32,28 @@ public class RadioButtonActivity extends AppCompatActivity {
         RadioButton radioButtonConPatatas = findViewById(R.id.radioButtonConPatatas);
         RadioButton radioButtonSinPatatas = findViewById(R.id.radioButtonSinPatatas);
         RadioGroup radioGroupPatatas = findViewById(R.id.radioGroupPatatas);
+        RadioGroup radioGroupMenu = findViewById(R.id.radioGroupMenu);
         Button buttonComprar = findViewById(R.id.buttonComprar);
+
+
+        //Creamos objeto SharedPreferences
+        SharedPreferences sharedPreferences = getSharedPreferences("datosKebab", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        int opcionPatatas = sharedPreferences.getInt("opcionPatatas", -1);
+        int opcionMenu = sharedPreferences.getInt("opcionMenu", -1);
+
+        if(opcionPatatas!=-1){
+            RadioButton opcion = findViewById(opcionPatatas);
+            opcion.setChecked(true);
+        }
+
+        if(opcionMenu!=-1){
+            RadioButton opcion = findViewById(opcionMenu);
+            opcion.setChecked(true);
+        }
+
+
 
 
         /*
@@ -76,6 +99,14 @@ public class RadioButtonActivity extends AppCompatActivity {
 
             //RadioButton opcion = findViewById(radioGroupPatatas.getCheckedRadioButtonId());
             //Toast.makeText(this, "Has seleccionado " + opcion.getText(), Toast.LENGTH_SHORT).show();
+
+
+            //Guardar selección
+
+            editor.putInt("opcionPatatas", radioGroupPatatas.getCheckedRadioButtonId());
+            editor.putInt("opcionMenu", radioGroupMenu.getCheckedRadioButtonId());
+            editor.apply();
+
         });
 
 
