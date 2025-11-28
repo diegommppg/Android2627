@@ -12,10 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoTema3">
         <activity
+            android:name=".ActivityBottomNavegation"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".ActivityBottomNavegation"
+            android:name=".ListActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
