@@ -14,4 +14,6 @@
     <string name="hora_alarma">"Hora alarma: "</string>
     <string name="minutos_alarma">Minutos alarma</string>
     <string name="button_crear_alarma">Poner alarma</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

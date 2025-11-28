@@ -54,10 +54,10 @@ public class MainActivityLogin extends AppCompatActivity {
 
 
 
-        ImageView imageView = findViewById(R.id.imageViewTest);
+        //ImageView imageView = findViewById(R.id.imageViewTest);
 
 
-        Glide.with(this).load("https://goo.gl/gEgYUd").into(imageView);
+        //Glide.with(this).load("https://goo.gl/gEgYUd").into(imageView);
 
         /*Glide.with(this)
                 .load(url)

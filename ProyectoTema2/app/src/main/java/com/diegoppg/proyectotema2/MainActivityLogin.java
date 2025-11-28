@@ -66,7 +66,9 @@ public class MainActivityLogin extends AppCompatActivity {
                     public void onActivityResult(ActivityResult result) {
 
                         if(result.getResultCode() == Activity.RESULT_OK)  {
-
+                            gfhgfhghf
+                                    gfhgfhgfh
+                                    gfhgfhghf
                         }
                     }
                 });
