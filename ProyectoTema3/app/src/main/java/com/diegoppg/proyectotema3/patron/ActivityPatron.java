@@ -29,7 +29,7 @@ public class ActivityPatron extends AppCompatActivity {
 
 
 
-        FactoryAPI.getFactory("SQL").
+        FactoryAPI.getFactory(getString(R.string.database)).
                 getInterfaceArdilla().listarArdilla().thenAccept(
                         ardillas -> {
                             System.out.println(ardillas);
