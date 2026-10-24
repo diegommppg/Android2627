@@ -1,0 +1,8 @@
+<resources>
+    <string name="textview_register_name">"Name: "</string>
+    <string name="textview_register_password">"Password: "</string>
+    <string name="app_name">MacAndroid</string>
+    <string name="label_nombre">Nombre: </string>
+    <string name="label_pass">Contraseña:</string>
+    <string name="iniciar_sesion">Iniciar sesión</string>
+</resources>
